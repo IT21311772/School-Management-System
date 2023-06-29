@@ -60,7 +60,7 @@
 	
 	<div class="login">
 		<h1>Admin Login</h1>
-		<form action="#" method="post">
+		<form action="login" method="post">
 			User Name : <input type="text" name="username" placeholder="Enter the User Name"> <br><br>
 			Password : <input type="password" name="password" placeholder="Enter the Password"> <br><br>
 			
