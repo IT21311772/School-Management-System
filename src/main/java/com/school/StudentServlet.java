@@ -1,6 +1,7 @@
 package com.school;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,11 +25,14 @@ public class StudentServlet extends HttpServlet {
 		isTrue = SchoolDBUtil.insertStudent(name, address, grade);
 		
 		if(isTrue == true) {
+			List<Student> stDetails = SchoolDBUtil.checkStudent(name, address);
+			request.setAttribute("stDetails", stDetails);
+			
 			RequestDispatcher dis = request.getRequestDispatcher("students.jsp");
 			dis.forward(request, response);
 		}else {
-			RequestDispatcher dis = request.getRequestDispatcher("addStudents.jsp");
-			dis.forward(request, response);
+			RequestDispatcher dis2 = request.getRequestDispatcher("addStudents.jsp");
+			dis2.forward(request, response);
 		}
 	}
 

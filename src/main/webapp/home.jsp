@@ -59,11 +59,11 @@
 
 	<div class="home">
 		<h1>Home Page</h1>
-		<form action="students.jsp" method="post">
+		<form action="dashboard.jsp" method="post">
 			<input type="submit" name="students" value="Students">
 		</form>
 		<br><br>
-		<form action="teachers.jsp" method="post">
+		<form action="dashboard.jsp" method="post">
 			<input type="submit" name="teachers" value="Teachers">
 		</form>
 	</div>

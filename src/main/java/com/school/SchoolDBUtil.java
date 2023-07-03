@@ -104,4 +104,31 @@ public class SchoolDBUtil {
 		
 		return std;
 	}
+	
+public static List<Student> checkStudent(String name, String address){
+		
+		ArrayList<Student> student = new ArrayList<>();
+		
+		try {
+			
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "select * from student";
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				int sid = rs.getInt(1);
+				String sname = rs.getString(2);
+				String saddress = rs.getString(3);
+				String sgrade = rs.getString(4);
+				
+				Student a = new Student(sid,sname,saddress,sgrade);
+				student.add(a);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return student;
+	}
 }
