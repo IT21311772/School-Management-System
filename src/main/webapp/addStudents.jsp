@@ -83,7 +83,7 @@
 	
 		<h1>Add Students</h1>
 	
-		<form action="#" method="post" onSubmit="return validateStudent()">
+		<form action="insert" method="post" onSubmit="return validateStudent()">
 			<label for="name">Name : </label>
 			<input type="text" name="name" id="name"><br><br>
 			

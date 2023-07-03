@@ -15,4 +15,13 @@
          	<url-pattern>/login</url-pattern>
          </servlet-mapping>
          
+         <servlet>
+         	<servlet-name>studentInsert</servlet-name>
+         	<servlet-class>com.school.StudentServlet</servlet-class>
+         </servlet>
+         <servlet-mapping>
+         	<servlet-name>studentInsert</servlet-name>
+         	<url-pattern>/insert</url-pattern>
+         </servlet-mapping>
+         
 </web-app>
