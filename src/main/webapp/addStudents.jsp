@@ -55,34 +55,8 @@
 	</style>
 </head>
 <body>
-
-	<script>
-		function validateStudent(){
-			var name = document.getElementById("name");
-			var address = document.getElementById("address");
-			var grade = document.getElementById("grade");
-			
-			if(name === ""){
-				alert("Please Enter the Name");
-				return false;
-			}
-			if(address === ""){
-				alert("Please Enter the Address");
-				return false;
-			}
-			if(grade === ""){
-				alert("Please Enter the Grade");
-				return false;
-			}
-			
-			return true;
-		}
-	</script>
-
 	<div class="addStudents">
-	
 		<h1>Add Students</h1>
-	
 		<form action="insert" method="post" onSubmit="validateStudent()">
 			<label for="name">Name : </label>
 			<input type="text" name="name" id="name"><br><br>

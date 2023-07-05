@@ -105,7 +105,7 @@ public class SchoolDBUtil {
 		return std;
 	}
 	
-public static List<Student> checkStudent(String name, String address){
+	public static List<Student> checkStudent(String name, String address){
 		
 		ArrayList<Student> student = new ArrayList<>();
 		
@@ -130,5 +130,28 @@ public static List<Student> checkStudent(String name, String address){
 			e.printStackTrace();
 		}
 		return student;
+	}
+	
+	public static boolean deleteCustomer(String id) {
+		
+		int convertedId = Integer.parseInt(id);
+		
+		try {
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "delete from student where sid='"+convertedId+"'";
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true;
+			}else {
+				isSuccess = false;
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
 	}
 }

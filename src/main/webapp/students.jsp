@@ -31,7 +31,15 @@
 			<td>${students.address}</td>
 			<td>${students.grade}</td>
 			<td><a href="#"><input type="button" name="update" value="Update"></a></td>
-			<td><a href="#"><input type="button" name="delete" value="Delete"></a></td>
+			
+			<c:url value="deleteStudent.jsp" var="stDelete">
+				<c:param name="sid" value="${sid}" />
+				<c:param name="name" value="${name}" />
+				<c:param name="address" value="${address}" />
+				<c:param name="grade" value="${grade}" />
+			</c:url>
+			
+			<td><a href="${stDelete}"><input type="button" name="delete" value="Delete"></a></td>
 		</tr>
 		</c:forEach>	
 	</table>
